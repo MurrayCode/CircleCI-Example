@@ -20,7 +20,7 @@ jobs:
       - checkout
       - run:
           name: "Tests"
-          command: "echo 'testing'"
+          command: echo "testing"
       - continuation/continue:
           configuration_path: test.yml
 
