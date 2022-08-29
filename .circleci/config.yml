@@ -11,10 +11,10 @@ workflows:
   always-run:
     jobs:
       - path-foltering/filter:
-        name: check-updated-files
+          name: check-updated-files
 
-        mapping: |
-          test1/.* run-test-1 true
-          test2/.* run-test-2 true
-        base-revision: main
-        config-path: .circleci/testing.yml
+          mapping: |
+            test1/.* run-test-1 true
+            test2/.* run-test-2 true
+          base-revision: main
+          config-path: .circleci/testing.yml
