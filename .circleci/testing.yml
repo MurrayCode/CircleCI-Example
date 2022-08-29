@@ -1,24 +1,21 @@
 version: 2.1
 
-# Define a job to be invoked later in a workflow.
-# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
-jobs:
-  run_test:
-    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
-    docker:
-      - image: cimg/go:1.19.0
-    # Add steps to the job
-    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
-    steps:
-      - checkout
-      - run:
-          name: "Go Tests"
-          command: "go test"
+parameters:
+  run-test-1:
+    type: boolean
+    default: false
+  run-test=2:
+    type: boolean
+    default: false
 
-# Invoke jobs via workflows
-# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  run_go_tests:
+  test-1:
+    when: << pipeline.parameter.run-test-1 >>
     jobs:
-      - run_test
+      name: test1
+      command: "go test ./test1"
+  test-2:
+    when: << pipeline.parameter.run-test-2 >>
+    jobs:
+      name: test2
+      command: "go test ./test2"
