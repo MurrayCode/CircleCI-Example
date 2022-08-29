@@ -14,7 +14,7 @@ workflows:
           name: check-updated-files
 
           mapping: |
-            ./test1/.* run-test-1 true
-            ./test2/.* run-test-2 true
+            ./test1 run-test-1 true
+            ./test2 run-test-2 true
           base-revision: main
           config-path: .circleci/testing.yml
