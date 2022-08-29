@@ -10,22 +10,21 @@ parameters:
 
 jobs:
   test1:
-    docker: 
+    docker:
       - image: cimg/go:1.19.0
     steps:
       - checkout
-      run:
+      - run:
         name: "testing test1"
         command: "go test ./test1"
   test2:
-    docker: 
+    docker:
       - image: cimg/go:1.19.0
     steps:
       - checkout
-      run:
+      - run:
         name: "testing test2"
         command: "go test ./test2"
-      
 
 workflows:
   test-1:
