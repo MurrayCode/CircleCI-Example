@@ -16,8 +16,7 @@ jobs:
       - checkout
       - run:
           name: "testing test1"
-          command: "go test"
-          app_src_directory: "test1"
+          command: "go test ./test1"
   test2:
     docker:
       - image: cimg/go:1.19.0
@@ -25,8 +24,7 @@ jobs:
       - checkout
       - run:
           name: "testing test2"
-          command: "go test"
-          app_src_directory: "test2"
+          command: "go test ./test2"
 
 workflows:
   test-1:
