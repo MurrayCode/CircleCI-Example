@@ -21,7 +21,7 @@ jobs:
           name: "Tests"
           command: "echo 'testing'"
       - continuation/continue:
-        configuration_path: test.yml
+          configuration_path: test.yml
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
