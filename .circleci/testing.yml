@@ -10,12 +10,12 @@ parameters:
 
 workflows:
   test-1:
-    when: << pipeline.parameter.run-test-1 >>
+    when: << pipeline.parameters.run-test-1 >>
     jobs:
       name: test1
       command: "go test ./test1"
   test-2:
-    when: << pipeline.parameter.run-test-2 >>
+    when: << pipeline.parameters.run-test-2 >>
     jobs:
       name: test2
       command: "go test ./test2"
