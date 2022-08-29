@@ -1,0 +1,37 @@
+version: 2.1
+
+parameters:
+  run-test-1:
+    type: boolean
+    default: false
+  run-test-2:
+    type: boolean
+    default: false
+
+jobs:
+  test1:
+    docker:
+      - image: cimg/go:1.19.0
+    steps:
+      - checkout
+      - run:
+          name: "testing test1"
+          command: "go test ./test1"
+  test2:
+    docker:
+      - image: cimg/go:1.19.0
+    steps:
+      - checkout
+      - run:
+          name: "testing test2"
+          command: "go test ./test2"
+
+workflows:
+  test-1:
+    when: << pipeline.parameters.run-test-1 >>
+    jobs:
+      - test1
+  test-2:
+    when: << pipeline.parameters.run-test-2 >>
+    jobs:
+      - test2
