@@ -4,7 +4,7 @@ parameters:
   run-test-1:
     type: boolean
     default: false
-  run-test=2:
+  run-test-2:
     type: boolean
     default: false
 
