@@ -1,7 +1,7 @@
 package test1
 
 func SayFoo() string {
-	return "Foo"
+	return "Baz"
 }
 
 func TestSelection() string {

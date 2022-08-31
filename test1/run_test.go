@@ -4,7 +4,7 @@ import "testing"
 
 func TestSayFoo(t *testing.T) {
 	got := SayFoo()
-	want := "Foo"
+	want := "Baz"
 	if got != want {
 		t.Errorf("expected: %s; got %s", want, got)
 	}
